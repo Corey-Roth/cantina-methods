@@ -25,7 +25,9 @@
 					</div>
 				</div>
 				<div class="styled-card">
-					<p class="tag">Look In</p>
+					<p class="tag" data-category="<?php $category = get_the_category(); $firstCategory = $category[2]->cat_name; echo $firstCategory;?>">
+						<?php $category = get_the_category(); $firstCategory = $category[2]->cat_name; echo $firstCategory;?>
+					</p>
 					<h2>How to do it:</h2>
 					<?php the_field('how_to_do_it'); ?>
 					<div class="footer">

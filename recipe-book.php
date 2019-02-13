@@ -104,12 +104,8 @@ function debug_to_console( $data ) {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-	var recipeBook = [];
+	
 	var selected;
-	$('#recipe-list option').each(function(index){
-		var recipe = [$(this).attr('data-id'), $(this).attr('value')];
-		recipeBook = recipeBook.concat(recipe);
-	});
 
 	$(document).on('change','#recipe-list',function(){
 		selected = $('#recipe-list').find(":selected").attr('value');
@@ -126,9 +122,9 @@ function debug_to_console( $data ) {
 		$(x).each(function(index){
 			$recipe = $(this).attr('data-recipe');
 			if ( $recipe.includes(selected)) {
-				$(this).removeClass('hidden');
+				$(this).fadeIn('fast');
 			} else {
-				$(this).addClass('hidden');
+				$(this).fadeOut('fast');
 			}
 		});
 	}

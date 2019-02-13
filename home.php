@@ -10,8 +10,10 @@ Template Name: Method Cards Homepage
 	<!-- section -->
 		<section class="hero">
 			<div class="container centered text-center">
-			<h1><?php the_title(); ?></h1>
-			<?php the_field('banner_copy'); ?>
+				<h1><?php the_title(); ?></h1>
+				<div class="">
+					<?php the_field('banner_copy'); ?>
+				</div>
 			</div>
 		</section>
 
@@ -57,17 +59,30 @@ Template Name: Method Cards Homepage
 				<button class="show centered">Show All</button>
 			</div>
 			<div class="flex-row card-flex">
-				<?php
-			    $args = array( 'category' => 3, 'post_type' =>  'post' ); 
-			    $postslist = get_posts( $args );    
-			    foreach ($postslist as $post) :  setup_postdata($post); 
-			    ?>
-			    <div class="styled-card mini" data-category="<?php $category = get_the_category(); $firstCategory = $category[1]->cat_name; echo $firstCategory;?>">  
-				    <h3><?php the_title(); ?></h3> 
-				    <?php the_field('short_description'); ?>
-				    <a href="<?php the_permalink(); ?>">View Card</a>
-				</div>
-			    <?php endforeach; ?>
+					<?php
+					//$activecategory = get_field('recipe_number');
+				    $args = array( 'category' => 3 , 'post_type' =>  'post' ); 
+				    $postslist = get_posts( $args );    
+				    foreach ($postslist as $post) :  setup_postdata($post); 
+				    ?>
+				    <div class="styled-card mini" data-category="<?php $category = get_the_category(); $firstCategory = $category[2]->cat_name; echo $firstCategory;?>" 
+				    	data-recipe="
+				    	<?php
+				    	$args = array('child_of' => 5);
+						$post_categories = wp_get_post_categories( get_the_ID() );
+						$cats = array();
+						foreach($post_categories as $c){
+						    $cat = get_category( $c );
+						    echo $cat->slug . ' ';
+						    $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
+						}
+						?>"> 
+
+					    <h3><?php the_title(); ?></h3> 
+					    <?php the_field('short_description'); ?>
+					    <a href="<?php the_permalink(); ?>">View Card</a>
+					</div>
+				    <?php endforeach; ?>
 			</div>
 		</section>
 	<!-- /section -->
@@ -98,15 +113,15 @@ Template Name: Method Cards Homepage
 		$('.styled-card').each(function(index){
 			$phase = $(this).attr('data-category');
 			if ( $phase == activePhase) {
-				$(this).removeClass('hidden');
+				$(this).fadeIn(300);
 			} else {
-				$(this).addClass('hidden');
+				$(this).fadeOut(300);
 			}
 		});
 	}
 
 	function showAll() {
-		$('.styled-card').removeClass('hidden');
+		$('.styled-card').fadeIn(300);
 	}
 
 	$('.show').click(function(){
