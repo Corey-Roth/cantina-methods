@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Method Cards Homepage
+Template Name: Card Deck
 */
 ?>
 
@@ -14,21 +14,6 @@ Template Name: Method Cards Homepage
 				<div class="">
 					<?php the_field('banner_copy'); ?>
 				</div>
-			</div>
-		</section>
-
-		<section class="small-container centered spacer">
-			<div class="flex-row">
-			<h2 class="underline">Our Philosophy</h2>
-				<div class="content-right light">
-					<?php the_field('our_philosophy'); ?>
-				</div>
-			</div>
-		</section>
-
-		<section class="quote">
-			<div class="small-container centered text-center">
-				<?php the_field('quote'); ?>
 			</div>
 		</section>
 		
