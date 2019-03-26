@@ -694,6 +694,23 @@ h2.text-center:after {
   transition: all 100ms ease;
 }
 
+.ribbon {
+  background-color: #F6F6F6;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 4px;
+  padding: 8px 0;
+}
+
+.ribbon a {
+  color: #2999ec;
+  text-decoration: none;
+}
+
+.ribbon a img {
+  max-height: 8px;
+}
+
 /* Heading colors */
 .active[data-category="Look In"] h3 {
   color: #B8C43A;
