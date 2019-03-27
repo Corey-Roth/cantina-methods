@@ -300,6 +300,7 @@ footer {
 footer p {
   color: #959595;
   font-size: 0.875em;
+  line-height: 2.5;
   margin: 0;
   width: 100%;
 }
@@ -651,6 +652,7 @@ h2.text-center:after {
 
 .recipe-selector {
   align-items: flex-start;
+  margin-bottom: 4em;
   width: 100%;
 }
 
