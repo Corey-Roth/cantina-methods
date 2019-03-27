@@ -53,8 +53,30 @@
 
 }
 /* footer */
-.footer {
+.f-footer-social {
+  text-align: right;
+  width: 100%;
+}
 
+.f-footer-social a {
+  padding: 0 0.25rem;
+  text-decoration: none;
+}
+
+.f-footer-social-icon {
+  margin-left: .875rem;
+  width: 1.5rem;
+  fill: #989898;
+  transition: fill 250ms ease-in-out;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+.f-footer-social-facebook {
+  height: 1.5rem;
+  width: auto;
 }
 
 /*------------------------------------*\
@@ -279,6 +301,7 @@ footer p {
   color: #959595;
   font-size: 0.875em;
   margin: 0;
+  width: 100%;
 }
 
 footer ul {
@@ -290,6 +313,10 @@ footer ul {
 
 footer li {
   padding: 0 0.5em;
+}
+
+.copyright a {
+  color: #404040;
 }
 
 footer .container {
@@ -376,8 +403,8 @@ footer .container {
 header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: -8em;
-  padding: 2em 1em;
+  margin-bottom: -7em;
+  padding: 2em 2em 1em;
   width: 100%;
 }
 
@@ -552,6 +579,7 @@ h2.underline:after {
   height: 17em;
   justify-content: space-between;
   width: calc(20% - 0.5em);
+  margin-bottom: 1rem;
   margin-right: 0.5rem;
   padding: 0 1em 1em;
 }
@@ -705,15 +733,20 @@ h2.text-center:after {
 }
 
 .ribbon {
-  background-color: #F6F6F6;
+  background-color: rgba(0,0,0, 0.16);
   font-size: 14px;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: -25px;
   padding: 8px 0;
+  position: relative;
+}
+
+.ribbon .container {
+  max-width: 80em;
 }
 
 .ribbon a {
-  color: #2999ec;
+  color: #fff;
   text-decoration: none;
 }
 

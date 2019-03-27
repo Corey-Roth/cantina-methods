@@ -26,6 +26,12 @@
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
+		<div class="ribbon">
+			<div class="container centered">
+				<a href="https://cantina.co/" target="_blank">Visit cantina.co &raquo;</a>
+			</div>
+		</div>
+
 		<div class="wrapper">
 
 			<!-- header -->
