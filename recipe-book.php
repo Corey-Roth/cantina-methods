@@ -27,7 +27,7 @@ function debug_to_console( $data ) {
 						<select id="recipe-list">
 							<option value="empty" data-id="0">Select a recipe</option>
 							<?php
-								$args = array('child_of' => 5);
+								$args = array('child_of' => 1359);
 								$categories = get_categories( $args );
 								foreach($categories as $category) { 
 								    echo '<option data-id=' . $category->term_id . ' value=' . $category->slug . '>' . $category->name.'</option>';
@@ -36,7 +36,7 @@ function debug_to_console( $data ) {
 						</select>
 					</div>
 					<?php
-					$args = array( 'child_of' => 14 , 'post_type' =>  'page' ); 
+					$args = array( 'child_of' => 25 , 'post_type' =>  'page' ); 
 			    	$pagelist = get_pages( $args ); 
 					foreach ($pagelist as $post) : setup_postdata($post);
 					?>
@@ -74,14 +74,25 @@ function debug_to_console( $data ) {
 				<div class="flex-row card-flex">
 					<?php
 					//$activecategory = get_field('recipe_number');
-				    $args = array( 'category' => 3 , 'post_type' =>  'post' ); 
+				    $args = array( 'category' => 1358 , 'post_type' =>  'post' ); 
 				    $postslist = get_posts( $args );    
 				    foreach ($postslist as $post) :  setup_postdata($post); 
 				    ?>
-				    <div class="styled-card mini" data-category="<?php $category = get_the_category(); $firstCategory = $category[2]->cat_name; echo $firstCategory;?>" 
+				    <div class="styled-card mini" data-category="
+				    	<?php
+				    	$cat_array = array();
+				    	$category = get_the_category();
+				    	foreach($category as $cats) {
+				    		$scattegory = $category[$cats]->cat_name;
+				    		array_push($cat_array, $scattegory);
+				    	}
+				    	//$firstCategory = $category[2]->cat_name;
+				    	//echo $firstCategory;
+				    	echo $cat_array;
+				    	?>" 
 				    	data-recipe="
 				    	<?php
-				    	$args = array('child_of' => 5);
+				    	$args = array('child_of' => 1359);
 						$post_categories = wp_get_post_categories( get_the_ID() );
 						$cats = array();
 						foreach($post_categories as $c){

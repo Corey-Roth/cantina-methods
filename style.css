@@ -694,6 +694,16 @@ h2.text-center:after {
   transition: all 100ms ease;
 }
 
+.phase h3:after {
+  content: url('/wp-content/themes/method-cards/img/arrow.svg');
+  display: inline-block;
+  height: 16px;
+  margin-left: 8px;
+  position: relative;
+  top: -3px;
+  width: 16px;
+}
+
 .ribbon {
   background-color: #F6F6F6;
   font-size: 14px;
@@ -732,12 +742,14 @@ h2.text-center:after {
   color: #D6255B;
 }
 
-.phase h3:after {
+.phase hr {
   background: #e79d00;
+  border: 0 none;
   content: " ";
   display: block;
   height: 1px;
   margin: 1rem 0;
+  outline: 0;
   width: 9rem;
 }
 
