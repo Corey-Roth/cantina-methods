@@ -286,7 +286,7 @@ h1, h2, h3 {
 
 footer {
   background: #F6F6F6;
-  padding: 2em;
+  padding: 1em 2em;
 }
 
 footer p {
@@ -368,7 +368,9 @@ footer .container {
   background: linear-gradient(135deg, #1a6195 0%, #2999ec 80%);
   color: #FFFFFF;
   display: flex;
+  margin-top: -9em;
   min-height: 57em;
+  position: relative;
 }
 
 .hero h1 {
@@ -393,12 +395,40 @@ footer .container {
   font-weight: 300;
 }
 
+.hero .background-img {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.background-img img {
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: -7em;
+  /*margin-bottom: -7em; */
   padding: 2em 2em 1em;
+  position: relative;
   width: 100%;
+  z-index: 2;
 }
 
 .main-nav {
@@ -641,7 +671,14 @@ h2.text-center:after {
 .recipe-selector {
   align-items: flex-start;
   margin-bottom: 4em;
+  position: relative;
   width: 100%;
+  z-index: 2;
+}
+
+.card-sort {
+  position: relative;
+  z-index: 2;
 }
 
 .recipe-icon {
@@ -726,9 +763,10 @@ h2.text-center:after {
   background-color: rgba(0,0,0, 0.16);
   font-size: 14px;
   line-height: 1;
-  margin-bottom: -25px;
+  /* margin-bottom: -25px; */
   padding: 8px 0;
   position: relative;
+  z-index: 2;
 }
 
 .ribbon .container {

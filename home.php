@@ -10,10 +10,19 @@ Template Name: Method Cards Homepage
 	<!-- section -->
 		<section class="hero">
 			<div class="container centered text-center">
-				<h1><?php the_title(); ?></h1>
-				<div class="">
-					<?php the_field('banner_copy'); ?>
+				<div class="hero-text">
+					<h1><?php the_title(); ?></h1>
+					<div class="">
+						<?php the_field('banner_copy') ?>
+					</div>
 				</div>
+			</div>
+			<div class="background-img">
+				<?php
+				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+				the_post_thumbnail( 'full' );
+				}
+				?>
 			</div>
 		</section>
 

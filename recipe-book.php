@@ -113,6 +113,14 @@ function debug_to_console( $data ) {
 				<?php endif; ?>
 				</div>
 			</div>
+
+			<div class="background-img">
+				<?php 
+				$image = get_field('icon');
+				if( !empty($image) ): ?>
+				<img class="recipe-icon" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" data-recipe="<?php the_field('recipe_slug'); ?>"/>
+				<?php endif; ?>
+			</div>
 		</section>
 	<!-- section -->
 	</main>
