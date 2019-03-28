@@ -4,7 +4,7 @@
 				<section class="container centered">
 					<!-- copyright -->
 					<p class="copyright">
-						All Rights Reserved. &copy; <?php echo date('Y'); ?> Copyright Cantina. | <a href="https://www.iubenda.com/privacy-policy/8239941">Privacy Policy</a>
+						All Rights Reserved. &copy; <?php echo date('Y'); ?> Copyright Cantina.&nbsp;|&nbsp;<a href="https://www.iubenda.com/privacy-policy/8239941">Privacy Policy</a>
 					</p>
 					<!-- /copyright -->
 					<div class="f-footer-social">

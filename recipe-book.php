@@ -151,9 +151,9 @@ function debug_to_console( $data ) {
 		$(x).each(function(index){
 			$recipe = $(this).attr('data-recipe');
 			if ( $recipe.includes(selected)) {
-				$(this).fadeIn('fast');
+				$(this).delay(400).fadeIn(300);
 			} else {
-				$(this).fadeOut('fast');
+				$(this).fadeOut(300);
 			}
 		});
 	}
