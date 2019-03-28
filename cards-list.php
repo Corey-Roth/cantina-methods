@@ -13,7 +13,12 @@ Template Name: Card Deck
 				<div class="hero-text">
 					<h1><?php the_title(); ?></h1>
 					<div class="">
-						<?php get_the_content(); ?>
+						<?php
+						    wp_reset_query(); // necessary to reset query
+						    while ( have_posts() ) : the_post();
+						        the_content();
+						    endwhile; // End of the loop.
+						?>
 					</div>
 				</div>
 			</div>
