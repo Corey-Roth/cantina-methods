@@ -25,6 +25,43 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+
+
+		<!-- [Mini modal] -->
+		<div class="modal" id="modal-1" aria-hidden="true">
+			<div class="modal-window">
+
+			  <div tabindex="-1" data-micromodal-close>
+
+			    <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" >
+
+
+			      <header>
+			        <h2 id="modal-1-title">
+			          Contact Us
+			        </h2>
+
+			        <hr/>
+
+			        <p>Let's talk about your project</p>
+
+			        <button class="header-close" aria-label="Close modal">
+			        	<img src="https://methodcardscantina.wpcomstaging.com/wp-content/uploads/2019/03/Close.png" alt="close"  data-micromodal-close/>
+			        </button>
+			      </header>
+
+			      <div id="modal-1-content">
+			        Modal Content
+			      </div>
+
+			    </div>
+			  </div>
+			</div>
+			<!-- end modal -->
+
+			<div class="modal-curtain" data-micromodal-close></div>
+		</div>
+
 		<!-- wrapper -->
 		<div class="ribbon">
 			<div class="container centered">
@@ -35,7 +72,7 @@
 		<div class="wrapper">
 
 			<!-- header -->
-			<header class="container centered" role="banner">
+			<header class="container centered page-header" role="banner">
 
 					<!-- logo -->
 					<div class="logo">
@@ -49,7 +86,7 @@
 					<!-- nav -->
 					<nav class="main-nav" role="navigation">
 						<?php html5blank_nav(); ?>
-						<a class="cta">Contact Us</a>
+						<button class="cta" data-micromodal-trigger="modal-1">Contact Us</button>
 					</nav>
 					<!-- /nav -->
 

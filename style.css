@@ -421,7 +421,7 @@ footer .container {
   z-index: 2;
 }
 
-header {
+.page-header {
   display: flex;
   justify-content: space-between;
   /*margin-bottom: -7em; */
@@ -450,8 +450,9 @@ header {
   padding: 0;
 }
 
-.main-nav .cta {
+.main-nav button.cta {
   background: #FFFFFF;
+  border: 0 none;
   border-radius: 0.25em;
   color: #319DED;
   margin-left: 3em;
@@ -558,8 +559,12 @@ h2.underline:after {
   position: relative;
 }
 
-.styled-card > p {
+.styled-card > p, .styled-card li {
   font-size: 1.25em;
+}
+
+.styled-card > li {
+  padding: 1rem 0;
 }
 
 .styled-card .tag {
@@ -857,6 +862,93 @@ h2.text-center:after {
   background: #D6255B;
 }
 
+/* Modal */
+
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal-window {
+  background: white;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.16);
+  height: 600px;
+  left: 50%;
+  margin-left: -400px;
+  margin-right: -400px;
+  margin-top: -300px;
+  max-width: 800px;
+  position: fixed;
+  right: 50%;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  z-index: 100;
+}
+
+.modal-window header {
+  text-align: center;
+}
+
+.modal-window h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 2rem 0;
+  text-transform: uppercase;
+}
+
+.modal-window hr {
+  background: #e79d00;
+  border: 0 none;
+  content: " ";
+  display: block;
+  height: 1px;
+  margin: 1rem auto;
+  outline: 0;
+  width: 9rem;
+}
+
+.modal-window p {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1;
+  margin: 2rem 0;
+}
+
+.header-close {
+  background: none;
+  border: 0 none;
+  padding: 0;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 24px;
+}
+
+.header-close img {
+  max-width: 100%;
+}
+
+.modal-curtain {
+  background: rgba(0,0,0,0.4);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+        
+
+
+
+
+/* Media Queries */
 @media (max-width: 1200px) {
   .flex-row, header {
     padding-left: 1.5em;

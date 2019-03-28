@@ -55,4 +55,10 @@
 		</script>
 
 	</body>
+
+		<script type="text/javascript" src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+
+		<script type="text/javascript">
+			MicroModal.init();
+		</script> 
 </html>

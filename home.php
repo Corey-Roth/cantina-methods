@@ -75,7 +75,13 @@ Template Name: Method Cards Homepage
 			<div class="flex-row card-flex">
 				<?php 
 				// the query
-				$wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+				$wp_args = array(
+					'order'   => 'ASC',
+					'post_type'=>'post',
+					'post_status'=>'publish',
+					'posts_per_page'=>-1
+				);
+				$wpb_all_query = new WP_Query($wp_args); ?>
 				<?php if ( $wpb_all_query->have_posts() ) : ?>
 				<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 				<div class="styled-card mini" data-category="<?php 
@@ -133,7 +139,6 @@ Template Name: Method Cards Homepage
 			showAll();
 		} else {
 			currentPhase = activePhase;
-			console.log(activePhase);
 			toggleCards(activePhase);
 		}
 	}
@@ -142,7 +147,7 @@ Template Name: Method Cards Homepage
 		$('.styled-card').each(function(index){
 			$phase = $(this).attr('data-category');
 			if ( $phase == activePhase) {
-				$(this).fadeIn(300);
+				$(this).delay(400).fadeIn(300);
 			} else {
 				$(this).fadeOut(300);
 			}
@@ -150,11 +155,16 @@ Template Name: Method Cards Homepage
 	}
 
 	function showAll() {
-		$('.styled-card').fadeIn(300);
+		$('.styled-card').fadeOut(300);
+		$('.styled-card').delay(400).fadeIn(300);
 	}
 
 	$('.show').click(function(){
+		if (currentPhase) {
 		showAll();
+		} else {
+			//nada
+		}
 	});
 
 </script>

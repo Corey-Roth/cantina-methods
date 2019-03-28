@@ -74,7 +74,13 @@ function debug_to_console( $data ) {
 				<div class="flex-row card-flex">
 				<?php 
 				// the query
-				$wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+				$wp_args = array(
+					'order'   => 'ASC',
+					'post_type'=>'post',
+					'post_status'=>'publish',
+					'posts_per_page'=>-1
+				);
+				$wpb_all_query = new WP_Query($wp_args); ?>
 				<?php if ( $wpb_all_query->have_posts() ) : ?>
 				<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 				<div class="styled-card mini" data-category="<?php 
