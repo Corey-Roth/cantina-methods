@@ -25,7 +25,18 @@
 					</div>
 				</div>
 				<div class="styled-card">
-					<p class="tag" data-category="<?php $category = get_the_category(); $firstCategory = $category[2]->cat_name; echo $firstCategory;?>">
+					<p class="tag" data-category="<?php 
+			    	$args = array('child_of' => 1358);
+					$post_categories = wp_get_post_categories( get_the_ID($args) );
+					foreach($post_categories as $c){
+					    $cat = get_category( $c );
+					    if ($cat->name == 'Look In' || $cat->name == 'Look Out' || $cat->name == 'Look Forward' || $cat->name == 'Expand' || $cat->name == 'Focus') {
+					    	$cat_name = ucfirst($cat->name);
+						    echo $cat_name;
+					    } else {
+					    	//do nothing
+						}
+					}?>" >
 						<?php $category = get_the_category(); $firstCategory = $category[2]->cat_name; echo $firstCategory;?>
 					</p>
 					<h2>How to do it:</h2>

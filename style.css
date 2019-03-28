@@ -1,14 +1,6 @@
 /*
-  Theme Name: HTML5 Blank
-  Theme URI: http://html5blank.com
-  Description: HTML5 Blank WordPress Theme
-  Version: 1.4.3
-  Author: Todd Motto (@toddmotto)
-  Author URI: http://toddmotto.com
-  Tags: Blank, HTML5, CSS3
-
-  License: MIT
-  License URI: http://opensource.org/licenses/mit-license.php
+  Theme Name: Method Cards
+  Author: Corey Roth
 */
 
 /*------------------------------------*\
@@ -583,10 +575,6 @@ h2.underline:after {
   margin-bottom: 1rem;
   margin-right: 0.5rem;
   padding: 0 1em 1em;
-}
-
-.styled-card.mini:nth-of-type(5) {
-  margin-right: 0;
 }
 
 .styled-card.mini h3 {
