@@ -824,21 +824,6 @@ h2.text-center:after {
   display: none;
 }
 
-.show {
-  padding: .875rem 1.5rem;
-  border: 1px solid #d5d5d5;
-  border-top-color: rgb(213, 213, 213);
-  border-right-color: rgb(213, 213, 213);
-  border-bottom-color: rgb(213, 213, 213);
-  border-left-color: rgb(213, 213, 213);
-  background-color: transparent;
-  color: #f5a623;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 /* card heading colors */
 .styled-card[data-category*="Look In"] h3, .tag[data-category*="Look In"] {
   background: #B8C43A;
@@ -875,12 +860,12 @@ h2.text-center:after {
 .modal-window {
   background: white;
   box-shadow: 0 0 20px 0 rgba(0,0,0,0.16);
-  height: 600px;
+  height: 768px;
   left: 50%;
-  margin-left: -400px;
-  margin-right: -400px;
-  margin-top: -300px;
-  max-width: 800px;
+  margin-left: -512px;
+  margin-right: -512px;
+  margin-top: -384px;
+  max-width: 1024px;
   position: fixed;
   right: 50%;
   text-align: center;
@@ -920,6 +905,11 @@ h2.text-center:after {
   margin: 2rem 0;
 }
 
+.modal-content {
+  padding: 0 4.5em 4.5em;
+  text-align: left;
+}
+
 .header-close {
   background: none;
   border: 0 none;
@@ -943,8 +933,86 @@ h2.text-center:after {
   top: 0;
   z-index: 10;
 }
-        
 
+.modal-content {
+  max-height: 560px;
+  overflow-y: scroll;
+}
+
+.modal-content label {
+  color: #333333;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.modal-content input, .modal-content textarea {
+  background: #F6F6F6;
+  border: 0 none;
+  border-radius: 4px;
+  height: 2.5em;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.modal-content textarea {
+  height: 9em;
+}
+
+.modal-content .primary, .show {
+  border: 1px solid #d5d5d5;
+  border-top-color: rgb(213, 213, 213);
+  border-right-color: rgb(213, 213, 213);
+  border-bottom-color: rgb(213, 213, 213);
+  border-left-color: rgb(213, 213, 213);
+  border-radius: 0;
+  background-color: transparent;
+  color: #f5a623;
+  font-size: 0.75rem;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .875rem 1.5rem !important;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.modal-content .actions {
+  text-align: center;
+}
+
+fieldset, .hs-input {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.hs-error-msgs {
+  margin: 0;
+  padding: 0;
+}
+
+.submitted-message {
+  font-size: 1.5em;
+  font-weight: 300;
+  text-align: center;
+}
+         
+.hs-input[type="checkbox"] {
+  height: auto;
+  margin-bottom: 1em;
+  width: auto !important;
+}
+
+.modal-content form li {
+  list-style-type: none;
+}
+
+select.hs-input {
+  margin-bottom: 2em;
+}
 
 
 
@@ -953,6 +1021,10 @@ h2.text-center:after {
   .flex-row, header {
     padding-left: 1.5em;
     padding-right: 1.5em;
+  }
+
+  .styled-card.mini {
+    width: calc(25% - 0.5em);
   }
 }
 
@@ -963,12 +1035,24 @@ h2.text-center:after {
   .hero p {
     font-size: 1.1em;
   }
+
+  .modal-window {
+    left: 0;
+    margin: 0;
+    right: 0;
+    top: 2em;
+  }
+}
+
+@media (max-width: 991px) {
+   .styled-card.mini {
+    width: calc(33.33% - 0.5em);
+  } 
 }
 
 @media (max-width: 767px) {
-  header {
+  .page-header {
     display: block;
-    margin-bottom: -12em;
   }
   
   .logo {
@@ -1025,5 +1109,41 @@ h2.text-center:after {
     float: left;
     max-width: none;
     min-width: 14rem;
+  }
+
+  .ribbon {
+    padding: 0.5rem 1rem;
+  }
+
+  .page-header {
+    display: block;
+    padding: 2em 1em 1em;
+  }
+
+  .main-nav li {
+    margin: 0;
+    padding: 0 1em;
+  }
+
+  .main-nav button.cta {
+    margin-left: 1em;
+  }
+
+  .hero {
+    margin-top: -13em;
+  }
+
+  footer .container {
+    display: block;
+    text-align: center;
+  }
+
+  footer p {
+    line-height: 1;
+    margin-bottom: 1em;
+  }
+
+  .f-footer-social {
+    text-align: center;
   }
 }
