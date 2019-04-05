@@ -1130,7 +1130,7 @@ select.hs-input {
   }
 
   .hero {
-    margin-top: -13em;
+    margin-top: -16.5em;
   }
 
   footer .container {
@@ -1139,11 +1139,55 @@ select.hs-input {
   }
 
   footer p {
-    line-height: 1;
+    line-height: 1.25;
     margin-bottom: 1em;
   }
 
   .f-footer-social {
     text-align: center;
+  }
+
+  /* Card Detail */
+  .card .flex-row {
+    display: block;
+  }
+
+  .card.hero {
+    padding-top: 16em;
+  }
+
+  .card .flex-col {
+    width: 100%;
+  }
+
+  .styled-card {
+    padding-top: 2em;
+  }
+
+  .styled-card h2 {
+    font-size: 2em;
+  }
+
+  .styled-card > p, .styled-card li {
+    font-size: 1em;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    width: 100%;
+  }
+
+  .main-nav li {
+    width: 100%;
+  }
+
+  .main-nav button.cta {
+    margin: 1em auto;
+    padding: 1em;
+    width: 200px;
   }
 }
