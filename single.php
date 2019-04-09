@@ -20,9 +20,21 @@
 						</div>
 					</div>
 					<h2>Recipes</h2>
-					<div class="unstyled-list large">
-						<?php the_field('recipes'); ?>
+					<div class="unstyled-list">
+					<?php 
+						$args = array('child_of' => 1359);
+						$post_categories = wp_get_post_categories( get_the_ID($args) );
+						foreach($post_categories as $c){
+						    $cat = get_category( $c );
+						    if ($cat->name == 'Look In' || $cat->name == 'Look Out' || $cat->name == 'Look Forward' || $cat->name == 'Expand' || $cat->name == 'Focus' || $cat->name== 'Cards') {
+						    	//nada
+						    } else {
+						    	$cat_name = ucfirst($cat->name);
+							    echo "<p>" . $cat_name . "</p>";
+							}
+					}?>	
 					</div>
+					<a class="recipe-cta" href="/recipes">View recipes</a>
 				</div>
 				<div class="styled-card">
 					<p class="tag" data-category="<?php 
@@ -38,17 +50,17 @@
 						}
 					}?>" >
 					<?php 
-$args = array('child_of' => 1358);
-$post_categories = wp_get_post_categories( get_the_ID($args) );
-foreach($post_categories as $c){
-    $cat = get_category( $c );
-    if ($cat->name == 'Look In' || $cat->name == 'Look Out' || $cat->name == 'Look Forward' || $cat->name == 'Expand' || $cat->name == 'Focus') {
-    	$cat_name = ucfirst($cat->name);
-	    echo $cat_name;
-    } else {
-    	//do nothing
-	}
-}?>	
+						$args = array('child_of' => 1358);
+						$post_categories = wp_get_post_categories( get_the_ID($args) );
+						foreach($post_categories as $c){
+						    $cat = get_category( $c );
+						    if ($cat->name == 'Look In' || $cat->name == 'Look Out' || $cat->name == 'Look Forward' || $cat->name == 'Expand' || $cat->name == 'Focus') {
+						    	$cat_name = ucfirst($cat->name);
+							    echo $cat_name;
+						    } else {
+						    	//do nothing
+							}
+					}?>	
 					</p>
 					<h2>How to do it:</h2>
 					<?php the_field('how_to_do_it'); ?>

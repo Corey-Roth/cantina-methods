@@ -517,13 +517,11 @@ h2.underline:after {
   content: none;
 }
 
-.card p {
-  font-size: 1em;
+.card p, .card li  {
+  font-size: 1.125em;
+  font-weight: 300;
 }
 
-.card .large {
-  font-size: 1.5em;
-}
 
 .card h2 {
   font-size: 1.5em;
@@ -560,11 +558,15 @@ h2.underline:after {
 }
 
 .styled-card > p, .styled-card li {
-  font-size: 1.25em;
+  font-size: 1.125em;
 }
 
-.styled-card > li {
-  padding: 1rem 0;
+.styled-card li {
+  padding: 0.5rem 0;
+}
+
+.card .large {
+  font-size: 1.5em;
 }
 
 .styled-card .tag {
@@ -666,7 +668,7 @@ h2.text-center:after {
 
 .recipe {
   flex-wrap: wrap;
-  padding: 14em 0 7em;
+  padding: 17em 0 7em;
 }
 
 .recipe p {
@@ -743,6 +745,27 @@ h1.recipe-header:after {
   height: auto;
 }
 
+.recipe-cta {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.recipe-cta:after {
+  content: url('/wp-content/themes/method-cards/img/arrow-white.svg');
+  display: inline-block;
+  height: 12px;
+  margin-left: 8px;
+  position: relative;
+  top: -2px;
+  transition: all 300ms ease;
+  width: 12px;
+}
+
+.recipe-cta:hover:after {
+  margin-left: 12px;
+}
+
 .styled-select select option {
   padding: 8px 0;
 }
@@ -772,7 +795,12 @@ h1.recipe-header:after {
   margin-left: 8px;
   position: relative;
   top: -3px;
+  transition: all 300ms ease;
   width: 16px;
+}
+
+.phase h3:hover:after {
+  margin-left: 16px;
 }
 
 .ribbon {
@@ -1025,6 +1053,11 @@ select.hs-input {
   margin-bottom: 2em;
 }
 
+.inputs-list {
+  margin: 0;
+  padding: 0;
+}
+
 
 
 /* Media Queries */
@@ -1189,16 +1222,32 @@ select.hs-input {
   }
 
   .main-nav ul {
-    width: 100%;
+    width: 70%;
   }
 
   .main-nav li {
     width: 100%;
+    padding: 0;
   }
 
   .main-nav button.cta {
-    margin: 1em auto;
-    padding: 1em;
-    width: 200px;
+    background: none;
+    color: white;
+    font-size: 0.875em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: auto;
+  }
+
+  .modal-content {
+    padding: 0 2em 2em;
+  }
+
+  .modal-window p {
+    font-size: 1em;
+    font-weight: 300;
+    margin: 1em 0;
   }
 }
