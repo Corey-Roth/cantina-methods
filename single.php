@@ -72,6 +72,12 @@ foreach($post_categories as $c){
 				<div class="resource">
 					<?php the_field('resource_3'); ?>
 				</div>
+				<div class="resource">
+					<?php the_field('resource_4'); ?>
+				</div>
+				<div class="resource">
+					<?php the_field('resource_5'); ?>
+				</div>
 			</div>
 		</section>
 	<!-- /section -->

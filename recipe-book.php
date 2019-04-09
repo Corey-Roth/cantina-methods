@@ -22,9 +22,10 @@ function debug_to_console( $data ) {
 		<section class="hero recipe">
 			<div class="recipe-selector container centered flex-row">
 				<div class="recipe-left">
+					<h1 class="recipe-header">Select a recipe below to uncover methodologies you can use to tackle your toughest challenges.</h1>
 					<p class="eyebrow">I need to...</p>
 					<div class="styled-select">
-						<select id="recipe-list">
+						<select id="recipe-list" autocomplete="off">
 							<option value="empty" data-id="0">Select a recipe</option>
 							<?php
 								$args = array('child_of' => 1359);
@@ -61,12 +62,6 @@ function debug_to_console( $data ) {
 					</div>
 					<?php endforeach; ?>
 				</div>
-				<!-- Icon -->
-				<?php 
-				$image = get_field('icon');
-				if( !empty($image) ): ?>
-				<img class="recipe-icon" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" data-recipe="<?php the_field('recipe_slug'); ?>"/>
-				<?php endif; ?>
 			</div>
 			
 			<!-- cards -->
@@ -120,13 +115,18 @@ function debug_to_console( $data ) {
 				</div>
 			</div>
 
-			<div class="background-img">
-				<?php 
-				$image = get_field('icon');
-				if( !empty($image) ): ?>
-				<img class="recipe-icon" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" data-recipe="<?php the_field('recipe_slug'); ?>"/>
-				<?php endif; ?>
+							<!-- Icon -->
+			<?php
+			$args = array( 'child_of' => 25 , 'post_type' =>  'page' ); 
+	    	$pagelist = get_pages( $args ); 
+			foreach ($pagelist as $post) : setup_postdata($post);
+			?>
+			<!-- here's hoping this is the image -->
+			<div class="recipe-icon background-img" data-recipe="<?php the_field('recipe_slug'); ?>">
+				<img src="<?php the_field('icon') ?>" alt="" />
 			</div>
+			<?php endforeach; ?>
+			<!-- /Icon -->
 		</section>
 	<!-- section -->
 	</main>
