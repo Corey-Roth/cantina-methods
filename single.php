@@ -73,7 +73,7 @@
 		</section>
 
 		<section class="container centered spacer">
-			<h2 class="underline text-center">More resources</h2>
+			<h2 class="underline text-center">Additional resources</h2>
 			<div class="flex-row resources">
 				<div class="resource">
 					<?php the_field('resource_1'); ?>
