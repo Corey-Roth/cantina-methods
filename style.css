@@ -647,6 +647,7 @@ h2.underline:after {
 }
 
 .resource img {
+  height: auto;
   max-width: 100%;
 }
 

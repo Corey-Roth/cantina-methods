@@ -153,7 +153,7 @@ acf_add_local_field_group(array(
             'key' => 'field_5c641a93f085d',
             'label' => 'Resource 2',
             'name' => 'resource_2',
-            'type' => 'text',
+            'type' => 'wysiwyg',
             'instructions' => '',
             'required' => 0,
             'conditional_logic' => 0,
@@ -169,7 +169,7 @@ acf_add_local_field_group(array(
             'maxlength' => '',
         ),
         array(
-            'key' => 'field_5c641a96f085e',
+            'key' => 'field_5c641a96f085f',
             'label' => 'Resource 3',
             'name' => 'resource_3',
             'type' => 'wysiwyg',
@@ -188,7 +188,7 @@ acf_add_local_field_group(array(
             'delay' => 0,
         ),
         array(
-            'key' => 'field_5c641a96f085e',
+            'key' => 'field_5c641a96f085g',
             'label' => 'Resource 4',
             'name' => 'resource_4',
             'type' => 'wysiwyg',
@@ -207,7 +207,7 @@ acf_add_local_field_group(array(
             'delay' => 0,
         ),
         array(
-            'key' => 'field_5c641a96f085e',
+            'key' => 'field_5c641a96f085h',
             'label' => 'Resource 5',
             'name' => 'resource_5',
             'type' => 'wysiwyg',
@@ -226,7 +226,7 @@ acf_add_local_field_group(array(
             'delay' => 0,
         ),
         array(
-            'key' => 'field_5c641a9df085f',
+            'key' => 'field_5c641a9df085i',
             'label' => 'Short Description',
             'name' => 'short_description',
             'type' => 'text',
