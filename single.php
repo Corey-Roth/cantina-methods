@@ -95,4 +95,8 @@
 	<!-- /section -->
 	</main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$('.resource a').attr('target','_blank');
+</script>
 <?php get_footer(); ?>

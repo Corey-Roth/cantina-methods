@@ -18,6 +18,10 @@
   text-rendering:optimizeLegibility;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
@@ -604,6 +608,7 @@ h2.underline:after {
 }
 
 .styled-card.mini {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
   display: flex;
   flex-direction: column;
   height: 17em;
@@ -612,6 +617,7 @@ h2.underline:after {
   margin-bottom: 1rem;
   margin-right: 0.5rem;
   padding: 0 1em 1em;
+  transition: all 300ms ease;
 }
 
 .styled-card.mini h3 {
@@ -632,6 +638,10 @@ h2.underline:after {
   text-transform: uppercase;
 }
 
+.styled-card.mini:hover {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.32);
+}
+
 .resources, .card-flex {
   flex-wrap: wrap;
   justify-content: space-between;
@@ -642,13 +652,28 @@ h2.underline:after {
   min-height: 17em;
 }
 
+.resources {
+  justify-content: flex-start;
+}
+
 .resource {
+  margin-bottom: 3em;
+  padding: 0 1em;
   width: calc(33.33% - 1em);
 }
 
 .resource img {
   height: auto;
   max-width: 100%;
+}
+
+.resource a {
+  color: #2999ec;
+  text-decoration: none;
+}
+
+.resource .alignnone {
+  margin: 0;
 }
 
 .resource h3 {
@@ -667,7 +692,7 @@ h2.text-center:after {
   margin: 1.5rem auto;
 }
 
-.recipe {
+.hero.recipe {
   flex-wrap: wrap;
   padding: 17em 0 7em;
 }
@@ -731,7 +756,7 @@ h1.recipe-header:after {
   color: white;
   display: block;
   font-family: Lato;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 700;
   width: 100%;
 }
@@ -741,7 +766,7 @@ h1.recipe-header:after {
   border: 0 none;
   border-radius: 0;
   font-family: Lato;
-  font-size: 2em;
+  font-size: 1rem;
   font-weight: 700;
   height: auto;
 }
@@ -789,6 +814,11 @@ h1.recipe-header:after {
   transition: all 100ms ease;
 }
 
+.phase h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .phase h3:after {
   content: url('/wp-content/themes/method-cards/img/arrow.svg');
   display: inline-block;
@@ -828,23 +858,23 @@ h1.recipe-header:after {
 }
 
 /* Heading colors */
-.active[data-category="Look In"] h3 {
+.active[data-category="Look In"] h3, .phase[data-category="Look In"]:hover h3 {
   color: #B8C43A;
 }
 
-.active[data-category="Look Out"] h3 {
+.active[data-category="Look Out"] h3, .phase[data-category="Look Out"]:hover h3 {
   color: #F8D542;
 }
 
-.active[data-category="Expand"] h3 {
+.active[data-category="Expand"] h3, .phase[data-category="Expand"]:hover h3 {
   color: #EB902D;
 }
 
-.active[data-category="Focus"] h3 {
+.active[data-category="Focus"] h3, .phase[data-category="Focus"]:hover h3 {
   color: #DF5331;
 }
 
-.active[data-category="Look Forward"] h3 {
+.active[data-category="Look Forward"] h3, .phase[data-category="Look Forward"]:hover h3 {
   color: #D6255B;
 }
 
@@ -1017,7 +1047,14 @@ h1.recipe-header:after {
   margin-right: auto;
   padding: .875rem 1.5rem !important;
   text-transform: uppercase;
+  transition: all 300ms ease;
   width: auto;
+}
+
+.modal-content .primary:hover, .show:hover {
+  background-color: #f5a623;
+  border-color: #f5a623;
+  color: #FFFFFF;
 }
 
 .modal-content .actions {
@@ -1059,6 +1096,17 @@ select.hs-input {
   padding: 0;
 }
 
+.recipe-info .resources {
+  justify-content: space-between;
+}
+
+.main-nav button.cta {
+    text-transform: uppercase;
+}
+
+
+
+
 
 
 /* Media Queries */
@@ -1087,6 +1135,22 @@ select.hs-input {
     right: 0;
     top: 2em;
   }
+
+  .card .col-md-7 {
+    width: 100%;
+  }
+
+  .card .container.flex-row {
+    flex-wrap: wrap;
+  }
+
+  .card .styled-card {
+    margin-top: 3em;
+  }
+
+  .resource {
+    width: calc(50% - 1em);
+  }
 }
 
 @media (max-width: 991px) {
@@ -1096,6 +1160,11 @@ select.hs-input {
 }
 
 @media (max-width: 767px) {
+
+  .resource { 
+    width: 100%;
+  }
+
   .page-header {
     display: block;
   }
@@ -1176,6 +1245,7 @@ select.hs-input {
 
   .hero {
     margin-top: -16.5em;
+    padding-top: 5em;
   }
 
   footer .container {
@@ -1197,8 +1267,13 @@ select.hs-input {
     display: block;
   }
 
+  .flex-row.mb-3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .card.hero {
-    padding-top: 16em;
+    padding-top: 18em;
   }
 
   .card .flex-col {
@@ -1238,7 +1313,6 @@ select.hs-input {
     font-weight: 700;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
     width: auto;
   }
 
@@ -1250,5 +1324,22 @@ select.hs-input {
     font-size: 1em;
     font-weight: 300;
     margin: 1em 0;
+  }
+
+  h1.recipe-header {
+    font-size: 1.5em;
+  }
+
+  .container.card-sort {
+    padding: 0;
+  }
+
+  .modal-window {
+    height: 100%;
+    top: 0;
+  }
+
+  .modal-content {
+    max-height: 650px;
   }
 }

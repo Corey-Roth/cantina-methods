@@ -32,29 +32,30 @@ Template Name: Card Deck
 		</section>
 		
 		<section class="card-sort container spacer centered">
+			<a id="cards"></a>
 			<div class="flex-row phase-row">
 				<div class="phase" data-category="Look In">
-					<h3>Look In</h3>
+					<h3><a href="#cards">Look In</a></h3>
 					<hr/>
 					<p>Build an understanding of the organization and industry to serve as a foundation and starting point of the project.</p>
 				</div>
 				<div class="phase" data-category="Look Out">
-					<h3>Look Out</h3>
+					<h3><a href="#cards">Look Out</a></h3>
 					<hr/>
 					<p>Learn about your target users and gain an understanding of their motiviations, behaviors, attitudes and needs in order to design something that is right for them.</p>
 				</div>
 				<div class="phase" data-category="Expand">
-					<h3>Expand</h3>
+					<h3><a href="#cards">Expand</a></h3>
 					<hr/>
 					<p>Go big and broad, build out your team, explore a multitude of possible solutions and directions.</p>
 				</div>
 				<div class="phase" data-category="Focus">
-					<h3>Focus</h3>
+					<h3><a href="#cards">Focus</a></h3>
 					<hr/>
 					<p>Start to narrow and refine your direction. Who are you designing for? What role does your brand or organization play in their process? What are the key opportunities?</p>
 				</div>
 				<div class="phase" data-category="Look Forward">
-					<h3>Look Forward</h3>
+					<h3><a href="#cards">Look Forward</a></h3>
 					<hr/>
 					<p>Transitioning from “what is” to “what could be”. Setting the design direction and providing the creative team the tools they need for success.</p>
 				</div>
@@ -117,6 +118,9 @@ Template Name: Card Deck
 <script type="text/javascript">
 
 	var currentPhase;
+	var $deckHeight;
+
+	$('.show').fadeOut(300);
 
 	$(".phase").click(function(){
 		$('.phase').removeClass('active');
@@ -130,6 +134,7 @@ Template Name: Card Deck
 		} else {
 			currentPhase = activePhase;
 			toggleCards(activePhase);
+			$('.show').fadeIn(300);
 		}
 	}
 
@@ -142,11 +147,19 @@ Template Name: Card Deck
 				$(this).fadeOut(300);
 			}
 		});
+
 	}
 
 	function showAll() {
 		$('.styled-card').fadeOut(300);
 		$('.styled-card').delay(400).fadeIn(300);
+		$('.show').fadeOut(300);
+		$('.phase').removeClass('active');
+	}
+
+	function checkHeight() {
+		$deckHeight = $('.card-flex').height();
+		$('.card-flex').height($deckHeight);
 	}
 
 	$('.show').click(function(){
@@ -155,6 +168,14 @@ Template Name: Card Deck
 		} else {
 			//nada
 		}
+	});
+
+	$(document).ready(function(){
+		checkHeight();
+	});
+
+	$(window).resize(function(){
+		checkHeight();
 	});
 
 </script>

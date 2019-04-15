@@ -46,7 +46,7 @@
 			        <p>Let's talk about your project</p>
 
 			        <button class="header-close" aria-label="Close modal">
-			        	<img src="https://methodcardscantina.wpcomstaging.com/wp-content/uploads/2019/03/Close.png" alt="close"  data-micromodal-close/>
+			        	<img src="https://methodcards.cantina.co/wp-content/uploads/2019/03/Close.png" alt="close"  data-micromodal-close/>
 			        </button>
 			      </header>
 
